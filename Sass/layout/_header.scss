@@ -1,0 +1,31 @@
+.header {
+    background-color: $color-white;
+    padding: 1rem;
+
+    &__heading {
+    font-size: 4rem;
+    text-align: center;
+    color: $font-color-heading;
+
+        &--main {
+            display: block;
+            font-weight: 500;
+            margin-bottom: .5rem;
+        }
+
+        &--sub {
+            display: block;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .header {
+
+        &__heading {
+            font-size: 7rem;
+        }
+    }
+}

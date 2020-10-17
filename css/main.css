@@ -1,0 +1,237 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #3c3c3c;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  font-size: 1rem;
+  font-family: inherit;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@media (orientation: portrait) {
+  body {
+    height: 100vh;
+  }
+  main {
+    height: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.color-box {
+  display: inline-block;
+  width: 14%;
+  border-radius: 3rem;
+  border: 2px solid #ddd;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.color-box:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 4px solid #ddd;
+  outline: none;
+}
+
+.color-box:after {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+}
+
+.color-box:not(:nth-of-type(3n)) {
+  margin-right: 4rem;
+}
+
+.color-box--1 {
+  opacity: 1;
+}
+
+.color-box--2 {
+  opacity: 1;
+}
+
+.color-box--3 {
+  opacity: 1;
+}
+
+.color-box--4 {
+  opacity: 1;
+}
+
+.color-box--5 {
+  opacity: 1;
+}
+
+.color-box--6 {
+  opacity: 1;
+}
+
+@media (orientation: portrait) {
+  .color-box {
+    display: block;
+    width: 65%;
+    border-radius: 5rem;
+    margin: 0 auto;
+  }
+  .color-box:not(:nth-of-type(3n)) {
+    margin-right: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+.btn {
+  color: #111;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--change {
+  background-color: #ddd;
+  border-radius: 1rem;
+  font-size: 2rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 1rem #000;
+          box-shadow: 0.3rem 0.3rem 1rem #000;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+.btn--change:hover {
+  background-color: #fff;
+}
+
+.btn--change:active {
+  -webkit-box-shadow: 0.1rem 0.1rem 0.7rem #000;
+          box-shadow: 0.1rem 0.1rem 0.7rem #000;
+  -webkit-transform: translateY(1.5px);
+          transform: translateY(1.5px);
+}
+
+.btn__difficulty {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: .5rem 1rem;
+  border-top: 1px solid #00008b;
+}
+
+.difficulty-selector {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.difficulty-selector:checked + .btn__difficulty {
+  color: #111;
+  background-color: #fff;
+}
+
+.difficulty-selector:focus + .btn__difficulty {
+  outline: 3px solid red;
+}
+
+@media (orientation: portrait) {
+  .btn {
+    padding: 2rem 4rem;
+  }
+  .btn--change {
+    font-size: 4rem;
+  }
+  .btn__difficulty {
+    font-size: 3.2rem;
+  }
+}
+
+.container {
+  padding: 3rem 10rem;
+  font-size: 0px;
+  text-align: center;
+  height: 100%;
+}
+
+.container--top {
+  padding-bottom: 4rem;
+}
+
+.container--bottom {
+  margin-bottom: 4rem;
+}
+
+.modes {
+  color: #111;
+  text-align: center;
+  background-color: #00008b;
+}
+
+@media (orientation: portrait) {
+  .container {
+    position: relative;
+    height: 100%;
+  }
+  .container--top {
+    width: 50%;
+    display: inline-block;
+  }
+  .container--bottom {
+    width: 50%;
+    float: left;
+  }
+}
+
+.header {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.header__heading {
+  font-size: 4rem;
+  text-align: center;
+  color: #631a1f;
+}
+
+.header__heading--main {
+  display: block;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.header__heading--sub {
+  display: block;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+@media (orientation: portrait) {
+  .header__heading {
+    font-size: 7rem;
+  }
+}

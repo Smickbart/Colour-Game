@@ -1,0 +1,37 @@
+.container {
+    padding: 3rem 10rem;
+    font-size: 0px;
+    text-align: center;
+    height: 100%;
+
+    &--top {
+        padding-bottom: 4rem;
+    }
+
+    &--bottom {
+        margin-bottom: 4rem;
+    }
+}
+
+.modes {
+    color: $font-color-default;
+    text-align: center;
+    background-color: $color-blue;
+}
+
+@media (orientation: portrait) {
+    .container {
+        position: relative;
+        height: 100%;
+
+        &--top {
+            width: 50%;
+            display: inline-block;
+        }
+
+        &--bottom {
+            width: 50%;
+            float: left;
+        }
+    }
+}
