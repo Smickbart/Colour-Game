@@ -35,13 +35,11 @@ difficultyButtonEasy.addEventListener("change", function() {
     topContainer.classList.add("block");
     bottomContainer.classList.add("hidden");
     newColors();
-    showBoxes();
 });
 
 difficultyButtonNormal.addEventListener("change", function() {
     bottomContainer.classList.remove("hidden");
     newColors();
-    showBoxes();
 })
 
 changeColorBtn.addEventListener("click", function() {
@@ -64,6 +62,7 @@ function newColors() {
     colorBoxes.forEach(function(box) {
         box.removeAttribute("tabindex")
     });
+    showBoxes();
 }
 
 function randomBox() {
