@@ -21,14 +21,9 @@ let colorBoxes = [boxOne, boxTwo, boxThree, boxFour, boxFive, boxSix];
 
 
 // Event Listeners
-for(let i = 0; i < colorBoxes.length; i++) {
-    colorBoxes[i].addEventListener("click", function(event) {
-        if(checkIfCorrect(event.target)) {
-            won(event.target);
-        } else {
-            lost(event.target);
-        }
-    });
+for(box of colorBoxes) {
+    box.addEventListener("click",
+        (e) => {checkIfCorrect(e.target) ? won(e.target) : lost(e.target);})
 }
 
 difficultyButtonEasy.addEventListener("change", function() {
@@ -52,11 +47,12 @@ function initialize() {
 }
 
 function newColors() {
+    winningColor = randomBox().style.backgroundColor;
+
     if(difficultyButtonEasy.checked) {
         bottomContainer.classList.add("hidden");
     }
     assignColor(colorBoxes);
-    winningColor = randomBox().style.backgroundColor;
     winningColorDisplay.innerHTML = winningColor;
     headerBackground.style.backgroundColor = "#fff";
     colorBoxes.forEach(function(box) {
@@ -66,15 +62,13 @@ function newColors() {
 }
 
 function randomBox() {
-    if(difficultyButtonEasy.checked) {
-        return colorBoxes[Math.floor(Math.random() * 3)];
-    } else {
-        return colorBoxes[Math.floor(Math.random() * 6)];
-    }        
+    return (difficultyButtonEasy.checked ?
+            colorBoxes[Math.floor(Math.random() * 3)] :
+            colorBoxes[Math.floor(Math.random() * 6)]);      
 }
 
-function assignColor(box) {
-    box.forEach(function(box) {
+function assignColor(boxes) {
+    boxes.forEach(function(box) {
         box.style.backgroundColor = generateColor();
     });
 }
@@ -95,9 +89,9 @@ function checkIfCorrect(box) {
 }
 
 function won(winner) {
-    for(let i = 0; i < colorBoxes.length; i++) {        
-        colorBoxes[i].style.backgroundColor = winner.style.backgroundColor;
-        headerBackground.style.backgroundColor = winner.style.backgroundColor;
+    headerBackground.style.backgroundColor = winner.style.backgroundColor;
+    for(box of colorBoxes) {
+        box.style.backgroundColor = winner.style.backgroundColor;
     }
     showBoxes();
     colorBoxes.forEach(function(box) {
@@ -111,9 +105,9 @@ function lost(loser) {
 }
 
 function showBoxes () {
-    for(let i = 0; i < colorBoxes.length; i++) {
-        if(colorBoxes[i].style.opacity === "0") {
-            colorBoxes[i].style.opacity = "1";
+    for(box of colorBoxes) {
+        if(box.style.opacity === "0") {
+            box.style.opacity = "1";
         }
     }
 }
